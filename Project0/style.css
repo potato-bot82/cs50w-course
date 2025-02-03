@@ -1,0 +1,160 @@
+body {
+    background-color: #202124;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.doodle {
+    margin-bottom: 20px;
+}
+.doodle img {
+    width: 300px;
+    height: auto;
+}
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+.header a {
+    background-color: #303134;
+    border: none;
+    border-radius: 4px;
+    color: #D3D3D3;
+    font-size: 14px;
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover {
+    background-color: #708090;
+}
+.header button:hover{
+    background-color: cyan;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #303134;
+    border-radius: 24px;
+    padding: 0px 20px;
+    width: 500px;
+    max-width: 90%;
+}
+.search-bar input {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
+}
+.search-bar form {
+    margin-top: 15px;
+    padding-left: 10px;
+}
+.search-bar .fa-microphone, .search-bar .fa-camera {
+    color: #9aa0a6;
+    margin-left: 20px;
+}
+.buttons {
+    margin-top: 20px;
+}
+.buttons button {
+    background-color: #303134;
+    border: none;
+    border-radius: 4px;
+    color: #e8eaed;
+    font-size: 14px;
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background-color: #3c4043;
+}
+
+/* Advanced server CSS*/
+
+#headerAS {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+#headerAS a {
+    background-color: #303134;
+    border: none;
+    border-radius: 4px;
+    color: #D3D3D3;
+    font-size: 14px;
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+#headerAS a:hover {
+    background-color: #708090;
+}
+
+/* Container Styles */
+#containerAS {
+    width: 800px;
+    max-width: 100%;
+}
+
+/* Input Group Styles */
+.left {
+    width: 100%;
+}
+.left p {
+    margin: 0 0 10px 0;
+}
+.left .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.left .input-group p {
+    margin: 0;
+    white-space: nowrap;
+    width: 300px; /* Fixed width for labels */
+}
+.left input[type="text"] {
+    width: calc(100% - 320px); /* Adjust width for label and margin */
+    padding: 10px;
+    border: 1px solid #5f6368;
+    border-radius: 4px;
+    background-color: #303134;
+    color: #e8eaed;
+}
+
+/* Button Styles */
+#btn-containerAS {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 20px;
+}
+#btnAS {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+#btnAS:hover {
+    background-color: #1557b0;
+}

@@ -1,0 +1,43 @@
+<html>
+ <head>
+  <title>
+   Google Image
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/gif" href="img/image.png" />
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <div class="header">
+        <a href="index.html">
+            Google Search
+        </a>
+        <a href="advancedSearch.html">
+            Google Advanced Search
+        </a>
+    </div>
+  <div class="doodle">
+   <img alt="google" src="img/images.png"/>
+  </div>
+  <div class="search-bar">
+   <i class="fas fa-search">
+   </i>
+   <form id="searchForm" action="https://www.google.com/search">
+    <input type="text" name="q">
+    <input type="hidden" name="tbm" value="isch">
+    </form>
+  </div>
+  <div class="buttons">
+   <button id="searchButton">
+    Penelusuran Google
+   </button>
+ </div>
+ 
+    <script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        document.getElementById('searchForm').submit();
+    });
+    </script>
+
+ </body>
+</html>

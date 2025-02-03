@@ -1,0 +1,52 @@
+<html>
+ <head>
+  <title>
+   Google Search
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/gif" href="img/chrome.png" />
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <div class="header">
+        <a href="image.html">
+            Google Image
+        </a>
+        <a href="advancedSearch.html">
+            Google Advanced Search
+        </a>
+    </div>
+  <div class="doodle">
+   <img alt="google" src="img/google.png"/>
+  </div>
+  <div class="search-bar">
+   <i class="fas fa-search">
+   </i>
+   <form id="searchForm" action="https://www.google.com/search">
+    <input type="text" name="q">
+    </form>
+  </div>
+  <div class="buttons">
+   <button id="searchButton">
+    Penelusuran Google
+   </button>
+    <button type="button" id="luckyButton">
+        Saya Lagi Beruntung
+    </button>
+  </div>
+
+    <script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        document.getElementById('searchForm').submit();
+    });
+    document.getElementById('luckyButton').addEventListener('click', function() {
+            var query = document.querySelector('input[name="q"]').value;
+            if (query) {
+                var luckyUrl = 'https://www.google.com/search?btnI=I&q=' + encodeURIComponent(query);
+                window.location.href = luckyUrl;
+            }
+        });
+    </script>
+
+ </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/gif" href="img/search.png" />
+    <style>
+        /* Header Styles */
+        .header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 20px;
+        }
+        .header a {
+            background-color: #303134;
+            border: none;
+            border-radius: 4px;
+            color: #D3D3D3;
+            font-size: 14px;
+            margin: 0 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .header a:hover {
+            background-color: #708090;
+        }
+
+        /* Body Styles */
+        body {
+            background-color: #202124;
+            color: #e8eaed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 800px;
+            max-width: 100%;
+        }
+
+        /* Input Group Styles */
+        .left {
+            width: 100%;
+        }
+        .left p {
+            margin: 0 0 10px 0;
+        }
+        .left .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .left .input-group p {
+            margin: 0;
+            white-space: nowrap;
+            width: 300px; /* Fixed width for labels */
+        }
+        .left input[type="text"] {
+            width: calc(100% - 320px); /* Adjust width for label and margin */
+            padding: 10px;
+            border: 1px solid #5f6368;
+            border-radius: 4px;
+            background-color: #303134;
+            color: #e8eaed;
+        }
+
+        /* Button Styles */
+        .btn-container {
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #1557b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="image.html">Google Image</a>
+            <a href="advancedSearch.html">Google Advanced Search</a>
+        </div>
+
+        <!-- Advanced Search Form -->
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+            <div class="left">
+                <p>Cari halaman dengan...</p>
+                <div class="input-group">
+                    <p>semua kata berikut:</p>
+                    <input type="text" name="as_q">
+                </div>
+                <div class="input-group">
+                    <p>kata atau frasa yang sama persis:</p>
+                    <input type="text" name="as_epq">
+                </div>
+                <div class="input-group">
+                    <p>salah satu dari kata-kata berikut:</p>
+                    <input type="text" name="as_oq">
+                </div>
+                <div class="input-group">
+                    <p>tak satu pun dari kata-kata berikut:</p>
+                    <input type="text" name="as_eq">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="btn-container">
+                <button type="submit" class="btn">Penelusuran Lanjutan</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

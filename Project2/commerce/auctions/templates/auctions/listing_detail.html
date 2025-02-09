@@ -1,0 +1,59 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>{{ listing.title }}</h2>
+    {% if listing.image %}
+        <img src="{{ listing.image.url }}" style="max-width: 400px;">
+    {% endif %}
+    <p><strong>Description:</strong> {{ listing.description }}</p>
+    <p><strong>Current Price:</strong> ${{ current_price }}</p>
+    <p><strong>Seller:</strong> {{ listing.seller.username }}</p>
+
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% endif %}
+
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'place_bid' listing.id %}" method="post">
+            {% csrf_token %}
+            {{ bid_form.as_p }}
+            <button type="submit" class="btn btn-success">Place Bid</button>
+        </form>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'toggle_watchlist' listing.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning">
+                {% if is_watching %} Remove from Watchlist {% else %} Add to Watchlist {% endif %}
+            </button>
+        </form>
+    {% endif %}
+
+    {% if user == listing.seller and listing.is_active %}
+        <form action="{% url 'close_auction' listing.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Close Auction</button>
+        </form>
+    {% elif not listing.is_active and user == listing.winner %}
+        <p class="alert alert-success">You have won this auction!</p>
+    {% endif %}
+
+    <h3>Comments</h3>
+    {% for comment in comments %}
+        <p><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'add_comment' listing.id %}" method="post">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+        </form>
+    {% endif %}
+{% endblock %}

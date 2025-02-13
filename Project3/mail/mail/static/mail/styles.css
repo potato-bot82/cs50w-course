@@ -1,0 +1,17 @@
+textarea {
+    min-height: 400px;
+}
+
+.email-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s;
+}
+
+.email-box:hover {
+    background-color: #e6e6e6;
+}
